@@ -7,8 +7,8 @@ struct Review{
     string comments;
 }
 
-void add_at_head(Review*& head, Review*& tail, double rating, const string& );
-void add_at_tail(Review*& head, Review*& tail, double rating, const string& );
+void add_at_head(Review*& head, Review*& tail, double rating, const string& comments);
+void add_at_tail(Review*& head, Review*& tail, double rating, const string& comments);
 void display_review(Review*& head);
 
 int main() {
@@ -21,3 +21,16 @@ int main() {
     cout << "Choice: ";
     cin >> choice;
 }
+
+void add_at_head(Review*& head, Review*& tail, double rating, const string& ){
+
+}
+
+void add_at_tail(Review*& head, Review*& tail, double rating, const string& ){
+
+}
+
+void display_review(Review*& head){
+
+}
+
