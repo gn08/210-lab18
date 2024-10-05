@@ -41,6 +41,22 @@ void add_at_tail(Review*& head, Review*& tail, double rating, const string& comm
 }
 
 void display_review(Review*& head){
-    Review
+    Review* temp = head;
+    int count = 1;
+    double total_rating;
+    int number_reviews = 0;
+
+    while (temp){
+        cout << "> Review #" << count << ": " << temp->rating << ":"
+            << temp-> comments << endl;
+        total_rating += 
+        number_reviews++;
+        temp = temp->next;
+        count++;
+    }
+
+    if (number_reviews > 0){
+        cout << 
+    }
 }
 
