@@ -6,7 +6,7 @@ struct Review{
     double rating;
     string comments;
     Review* next;
-}
+};
 
 void add_at_head(Review*& head, Review*& tail, double rating, const string& comments);
 void add_at_tail(Review*& head, Review*& tail, double rating, const string& comments);
@@ -16,12 +16,15 @@ int main() {
     Review* head = nullptr;
     Review* tail = nullptr;
     int choice;
+    double rating;
+    string comments;
 
     cout << "Which linked list method should we use?" << endl;
     cout << "[1] New nodes are added at the head of the linked list";
     cout << "[2] New nodes are added at the tail of the linked list";
     cout << "Choice: ";
     cin >> choice;
+    cin.ignore();
 
     cout << "Enter review rating";
     cin >> rating;
@@ -50,7 +53,7 @@ int main() {
 }
 
 void add_at_head(Review*& head, Review*& tail, double rating, const string& comments){
-    Review* new_node = new Review{};
+    Review* new_node = new Review{rating, comments, nullptr};
     new_node-> next = head;
     head = new_node;
     if (!tail){
@@ -59,7 +62,7 @@ void add_at_head(Review*& head, Review*& tail, double rating, const string& comm
 }
 
 void add_at_tail(Review*& head, Review*& tail, double rating, const string& comments){
-    Review* new_node = new Review{};
+    Review* new_node = new Review{rating, comments, nullptr};
     if(!head){
         head = new_node;
         tail = new_node;
@@ -79,7 +82,7 @@ void display_review(Review*& head){
     while (temp){
         cout << "> Review #" << count << ": " << temp->rating << ":"
             << temp-> comments << endl;
-        total_rating += 
+        total_rating += temp ->rating;
         number_reviews++;
         temp = temp->next;
         count++;
