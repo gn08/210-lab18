@@ -5,6 +5,7 @@ using namespace std;
 struct Review{
     double rating;
     string comments;
+    Review* next;
 }
 
 void add_at_head(Review*& head, Review*& tail, double rating, const string& comments);
@@ -21,6 +22,10 @@ int main() {
     cout << "[2] New nodes are added at the tail of the linked list";
     cout << "Choice: ";
     cin >> choice;
+
+    if (choice == 1){
+        add_at_head
+    }
 }
 
 void add_at_head(Review*& head, Review*& tail, double rating, const string& comments){
@@ -56,7 +61,8 @@ void display_review(Review*& head){
     }
 
     if (number_reviews > 0){
-        cout << 
+        cout << "> Average: " << total_rating / number_reviews << endl;
+    } else {
+        cout << "None" << endl;
     }
 }
-
