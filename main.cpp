@@ -23,9 +23,30 @@ int main() {
     cout << "Choice: ";
     cin >> choice;
 
+    cout << "Enter review rating";
+    cin >> rating;
+    cin.ignore();
+    cout << "Enter comments: ";
+    getline(cin, comments);
+
     if (choice == 1){
-        add_at_head
+        add_at_head(head, tail, rating, comments);
+    } else{
+        add_at_tail(head, tail, rating, comments);
     }
+
+    cout << "Enter another?";
+    cin >> another_review;
+
+    cout  << "Outputting all reviews:";
+    display_review(head);
+    while (head){
+        Review* temp = head;
+        head = head-> next;
+        delete temp;
+    }
+
+    return 0;
 }
 
 void add_at_head(Review*& head, Review*& tail, double rating, const string& comments){
