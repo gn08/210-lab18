@@ -51,7 +51,8 @@ int main() {
 
 void add_at_head(Review*& head, Review*& tail, double rating, const string& comments){
     Review* new_node = new Review;
-
+    new_node->rating = rating;
+    new_node->comments = comments;
     new_node-> next = head;
     head = new_node;
     if (!tail){
@@ -61,6 +62,8 @@ void add_at_head(Review*& head, Review*& tail, double rating, const string& comm
 
 void add_at_tail(Review*& head, Review*& tail, double rating, const string& comments){
     Review* new_node = new Review;
+    new_node->rating = rating;
+    new_node->comments = comments;
     if(!head){
         head = new_node;
         tail = new_node;
