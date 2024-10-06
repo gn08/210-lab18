@@ -50,7 +50,8 @@ int main() {
 }
 
 void add_at_head(Review*& head, Review*& tail, double rating, const string& comments){
-    Review* new_node = new Review{rating, comments, nullptr};
+    Review* new_node = new Review;
+
     new_node-> next = head;
     head = new_node;
     if (!tail){
@@ -59,7 +60,7 @@ void add_at_head(Review*& head, Review*& tail, double rating, const string& comm
 }
 
 void add_at_tail(Review*& head, Review*& tail, double rating, const string& comments){
-    Review* new_node = new Review{rating, comments, nullptr};
+    Review* new_node = new Review;
     if(!head){
         head = new_node;
         tail = new_node;
@@ -73,13 +74,13 @@ void add_at_tail(Review*& head, Review*& tail, double rating, const string& comm
 void display_review(Review*& head){
     Review* temp = head;
     int count = 1;
-    double total_rating;
+    double total_rating = 0.0;
     int number_reviews = 0;
 
     while (temp){
         cout << "> Review #" << count << ": " << temp->rating << ":"
             << temp-> comments << endl;
-        total_rating += temp ->rating;
+        total_rating += temp->rating;
         number_reviews++;
         temp = temp->next;
         count++;
