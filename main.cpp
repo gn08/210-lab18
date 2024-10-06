@@ -38,9 +38,6 @@ int main() {
         add_at_tail(head, tail, rating, comments);
     }
 
-    cout << "Enter another?";
-    cin >> another_review;
-
     cout  << "Outputting all reviews:";
     display_review(head);
     while (head){
@@ -57,7 +54,7 @@ void add_at_head(Review*& head, Review*& tail, double rating, const string& comm
     new_node-> next = head;
     head = new_node;
     if (!tail){
-        tail = head
+        tail = head;
     }
 }
 
