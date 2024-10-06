@@ -1,0 +1,15 @@
++-----------------------+
+|       Review          |
++-----------------------+
+| - rating: double      |
+| - comments: string    |
+| - next: Review*       |
++-----------------------+
+
++-----------------------+
+|       Functions                                                               |
++-----------------------+
+| + add_at_head(head: Review*, tail: Review*, rating: double, comments: string) |
+| + add_at_tail(head: Review*, tail: Review*, rating: double, comments: string) |
+| + display_review(head: Review*)                                               |
++-----------------------+

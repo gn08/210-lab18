@@ -49,6 +49,10 @@ int main() {
     return 0;
 }
 
+//add_at_head() adds review node at head of list
+// arguments: head- reference to first node, tail- reference to last node
+//            rating- rating in new node, comments- review comments
+//returns: void
 void add_at_head(Review*& head, Review*& tail, double rating, const string& comments){
     Review* new_node = new Review;
     new_node->rating = rating;
@@ -60,6 +64,10 @@ void add_at_head(Review*& head, Review*& tail, double rating, const string& comm
     }
 }
 
+//add_at_tail() adds review node at tail of list
+// arguments: head- reference to first node, tail- reference to last node
+//            rating- rating in new node, comments- review comments
+//returns: void
 void add_at_tail(Review*& head, Review*& tail, double rating, const string& comments){
     Review* new_node = new Review;
     new_node->rating = rating;
@@ -74,6 +82,9 @@ void add_at_tail(Review*& head, Review*& tail, double rating, const string& comm
 
 }
 
+//display_review() outputs reviews and gets average rating
+// arguments: head: reference to first node
+// returns: void
 void display_review(Review*& head){
     Review* temp = head;
     int count = 1;
