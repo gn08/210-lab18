@@ -54,14 +54,18 @@ void add_at_head(Review*& head, Review*& tail, double rating, const string& comm
     new_node-> next = head;
     head = new_node;
     if (!tail){
-
+        tail = head
     }
 }
 
 void add_at_tail(Review*& head, Review*& tail, double rating, const string& comments){
     Review* new_node = new Review{};
     if(!head){
-
+        head = new_node;
+        tail = new_node;
+    } else {
+        tail -> next = new_node;
+        tail = new_node;
     }
 
 }
